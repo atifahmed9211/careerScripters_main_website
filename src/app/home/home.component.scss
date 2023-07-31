@@ -1,0 +1,218 @@
+$white_background_Color:#fafbf6;
+
+.sectionThree {
+    background: $white_background_Color;
+    position: relative;
+
+    div {
+        .row {
+            margin: 0;
+        }
+    }
+
+    .left-triangle {
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+
+    .heading {
+        margin-top: 60px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .dot {
+        position: absolute;
+        bottom: -90px;
+        left: -80px;
+    }
+
+    div.highway-slider {
+        display: flex;
+        height: 150px;
+        justify-content: center;
+        width: 100%;
+
+        div.highway-barrier {
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul.highway-lane {
+            display: flex;
+            height: 100%;
+
+            li.highway-car {
+                align-items: center;
+                background: #fff;
+                color: #343434;
+                display: flex;
+                justify-content: center;
+                padding: 0 30px;
+            }
+        }
+    }
+
+    @keyframes translatestf {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-500%);
+        }
+    }
+
+    @keyframes translateinfinite {
+        100% {
+            transform: translateX(calc(-180px * 12));
+        }
+    }
+
+    #infinite div.highway-barrier {
+
+        &::before,
+        &::after {
+            content: " ";
+            height: 100%;
+            position: absolute;
+            width: 180px;
+            z-index: 9;
+        }
+
+        &::before {
+            background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            left: 0;
+            top: 0;
+        }
+
+        &::after {
+            background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            right: 0;
+            top: 0;
+        }
+
+        ul.highway-lane {
+
+            //width:calc(180px * 24);
+            li.highway-car {
+                animation: translateinfinite 20s linear infinite;
+            }
+        }
+    }
+}
+
+/* Counter section start from here */
+
+.sectionClass {
+    display: block;
+    padding: 20px 0px 50px 0px;
+    position: relative;
+}
+
+.fullWidth {
+    display: table;
+    float: none;
+    height: 100%;
+    min-height: 1px;
+    padding: 0;
+    position: relative;
+    width: 100% !important;
+}
+
+.sectiontitle {
+    background-position: center;
+    margin: 30px 0 0px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.sectiontitle h2 {
+    color: #222;
+    margin-bottom: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.headerLine {
+    background: #101F2E;
+    display: inline-block;
+    height: 2px;
+    width: 160px;
+}
+
+.projectFactsWrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+#projectFacts .fullWidth {
+    padding: 0;
+}
+
+.projectFactsWrap .item {
+    height: 100%;
+    padding: 50px 0px;
+    text-align: center;
+}
+
+.projectFactsWrap {
+    .item:nth-child(1) {
+        background: rgb(16, 31, 46);
+    }
+
+    .item:nth-child(2) {
+        background: rgb(18, 34, 51);
+    }
+
+    .item:nth-child(3) {
+        background: rgb(21, 38, 56);
+    }
+
+    .item:nth-child(4) {
+        background: rgb(23, 44, 66);
+    }
+
+    .item p.number {
+        font-size: 40px;
+        font-weight: bold;
+        padding: 0;
+    }
+
+    .item p {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'Open Sans';
+        margin: 0;
+        padding: 10px;
+    }
+
+    .item span {
+        background: rgba(255, 255, 255, 0.8);
+        display: block;
+        height: 2px;
+        margin: 0 auto;
+        width: 60px;
+    }
+
+    .item {
+
+        &:hover i,
+        &:hover p {
+            color: white;
+        }
+
+        &:hover span {
+            background: white;
+        }
+
+        i {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 50px;
+            vertical-align: middle;
+        }
+    }
+}
+/* Counter section end */

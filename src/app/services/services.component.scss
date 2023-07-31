@@ -1,0 +1,60 @@
+$boxwidth: 300px;
+$boxheight: 300px;
+
+.wrap {
+    padding: 15px;
+}
+
+.wrap:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.box-rotate-wrap {
+    perspective: 1000px;
+    padding: 15px;
+}
+
+.box,
+.box>div {
+    width: $boxwidth;
+    height: $boxheight;
+}
+
+.box-rotate {
+    position: relative;
+    transition: all 0.8s ease;
+    transform-style: preserve-3d;
+    transform: translate3d(0, 0, -$boxheight/2);
+    margin: auto;
+}
+
+.box-rotate>.left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    padding: 20px;
+    overflow: auto;
+
+    h4,h5 {
+        color: #fff;
+    }
+}
+
+.box-rotate .front {
+    z-index: 2;
+    transform: rotate3d(0, 1, 0, 0deg) translate3d(0, 0, $boxwidth/2);
+}
+
+.box-rotate .left {
+    background-color: #00B98E !important;
+    transform: rotate3d(0, 1, 0, -90deg) translate3d(0, 0, $boxwidth/2);
+    color: #ffffff;
+}
+
+.box-rotate-left:hover {
+    transform: translate3d(0, 0, -$boxwidth/2) rotate3d(0, 1, 0, 90deg);
+}
